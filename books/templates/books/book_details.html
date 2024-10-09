@@ -1,0 +1,31 @@
+<!-- books/templates/books/book_details.html -->
+{% extends 'index.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books Data</title>
+</head>
+<body>
+    <h3>Title: {{ book.title }}</h3>
+    <p>Author: {{ book.authors }}</p>
+    <p>ISBN: {{ book.isbn }}</p>
+    <p>Publication Date: {{book.publication_date}}</p>
+    <p>Page Count: {{ book.num_pages }}</p>
+    <p>Hits: {{ book.num_hits }}</p>
+    <p>Reviews: {{book.reviews_count}}</p>
+    {% for review in reviews %}
+        <p>Rating: {{ review.rating }}</p>
+        <p>{{ review.pub_date }}</p>
+        <p>{{ review.review_text }}</p>
+    {% endfor %}
+    <form method=POST action="{% url 'books:add_book' book.id %}">
+        <input type="button" value="Add Book">Add</button>
+    </form>
+    <form method=POST action="{% url 'books:write_review' book.id %}">
+        <input type="button" value="Write Review">Write Review</button>
+    </form>
+</body>
+</html>

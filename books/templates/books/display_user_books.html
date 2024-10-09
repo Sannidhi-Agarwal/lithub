@@ -1,0 +1,27 @@
+<!-- books/templates/books/display_user_books.html -->
+{% extends 'index.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Books Data</title>
+</head>
+<body>
+    <div>
+    {% for user_book in user_books %}
+        <div>
+            <a href="{% url 'books:book_details' book %}">
+                <p>Title: {{ user_book.title }}</p>
+                <p>Author: {{ user_book.authors }}</p>
+                <p>ISBN: {{ user_book.isbn }}</p>
+                <form method=POST action="{% url 'books:remove_book' book.id %}">
+                    <input type="button" value="Remove Book">Remove</button>
+                </form>
+            </a>
+        </div>
+    {% endfor %}
+    </div>
+</body>
+</html>

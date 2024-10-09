@@ -1,0 +1,20 @@
+<!-- books/templates/books/dashboard.html -->
+{% extends 'index.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div>
+        <h2>Hi, {{ user.username }}</h2>
+        <p>Account Created on: {{ user.account_date }}</p>
+        <p>Friends: {{user.num_friends}}</p>
+        <p>Books in Library: {{ user.num_books }}</p>
+        <p>Reviews Written: {{ user.num_reviews }}</p>
+    </div>
+</body>
+</html>
