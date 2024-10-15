@@ -1,0 +1,23 @@
+<!-- books/templates/books/write_review.html -->
+{% extends 'index.html'%}
+{% load static %}
+
+{% block title %}Write Review{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/write_review.css' %}"/>
+{% endblock %}
+
+{% block content %}
+<div class="review-page-container">
+    <form class="review-form-container" method=POST action="">
+        {% csrf_token %}
+        <label class="review-label" for="rating">Rate the book:</label>
+        <input class="review-range" type="range" min="1" max="5" step="1" name="rating" required>
+        <br>
+        <label class="review-label" for="review">Write a review:</label>
+        <textarea class="review-textarea" name="review" rows="5" cols="80"></textarea>
+        <br>
+        <button class="submit-button" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

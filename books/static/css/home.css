@@ -1,0 +1,60 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Ensure no default margin around the body */
+}
+
+/* Container for Buttons */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 300px; /* Restrict container width */
+    text-align: center;
+}
+
+/* Styling the Buttons */
+.button-container a {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    background-color: #3D251E;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 10px 0;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.button-container a:hover {
+    background-color: #2B1A14;
+}
+
+.button-container p {
+    font-size: 18px;
+    color: #888;
+    margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    a {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}

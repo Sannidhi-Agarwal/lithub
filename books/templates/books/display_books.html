@@ -1,0 +1,23 @@
+<!-- books/templates/books/display_books.html -->
+{% extends 'index.html'%}
+{% load static %}
+
+{% block title %}Browse{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/books.css' %}"/>
+{% endblock %}
+
+{% block content %}
+<div class="book-container">
+    {% for book in books %}
+        <div class="book-card">
+            <img src="{% static '' %}{{ book.cover }}" alt="Cover Page - {{ book.title }}" width="100px"/> 
+            <p><b>Title: </b>{{ book.title }}</p>
+            <p><b>Author: </b>{{ book.authors }}</p>
+            <p><b>ISBN: </b>{{ book.isbn }}</p>
+            <a href="{% url 'books:book_details' book.id %}">Reviews</a>
+            <a href="{% url 'books:add_book' book.id %}">Add</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

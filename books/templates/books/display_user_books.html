@@ -1,0 +1,24 @@
+<!-- books/templates/books/display_user_books.html -->
+{% extends 'index.html'%}
+{% load static %}
+
+{% block title %}My Library{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/books.css' %}"/>
+{% endblock %}
+
+{% block content %}
+<div class="book-container">
+    {% for user_book in user_books %}
+        <div class="book-card">
+            <img src="{% static '' %}{{ user_book.cover }}" alt="Cover Page - {{ user_book.title }}" width="100px"/> 
+            <p>Title: {{ user_book.title }}</p>
+            <p>Author: {{ user_book.authors }}</p>
+            <p>ISBN: {{ user_book.isbn }}</p>
+            
+            <a href="{% url 'books:book_details' user_book.id %}">Reviews</a>
+            <a href="{% url 'books:remove_book' user_book.id %}">Remove</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

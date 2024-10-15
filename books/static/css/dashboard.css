@@ -1,0 +1,49 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Dashboard Container */
+.dashboard {
+    margin: 0; /* Center align the container */
+    background-color: white; /* White background for the container */
+    padding: 10px 20px; /* Padding inside the container */
+}
+
+/* Heading Styling */
+.dashboard h2 {
+    color: #3D251E; /* Dark color for heading */
+    margin-bottom: 20px; /* Space below the heading */
+    font-size: 28px; /* Large font for the heading */
+}
+
+/* Paragraph Styling */
+.dashboard p {
+    font-size: 18px; /* Increase font size for better readability */
+    margin-bottom: 15px; /* Space between paragraphs */
+    color: #333; /* Dark gray text color */
+}
+
+/* Logout Button Styling */
+.dashboard a {
+    display: inline-block; /* Make link behave like a button */
+    background-color: #3D251E; /* Dark background for button */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Slightly larger font */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+    margin-top: 20px; /* Space above the button */
+}
+
+/* Hover Effect for Logout Button */
+.dashboard a:hover {
+    background-color: #2B1A14; /* Darker shade on hover */
+}

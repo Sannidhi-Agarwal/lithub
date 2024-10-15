@@ -1,0 +1,49 @@
+<!-- books/templates/books/book_details.html -->
+{% extends 'index.html'%}
+{% load static %}
+
+{% block title %}Reviews{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/book_details.css' %}"/>
+{% endblock %}
+
+
+{% block content %}
+<div class="book-details-wrapper">
+    <div class="book-details">
+        <img class="book-cover" src="{% static '' %}{{ book.cover }}" alt="Cover Page - {{ book.title }}" width="100px"/> 
+        <div class="book-text">
+            <h3>Title: {{ book.title }}</h3>
+            <p>Author: {{ book.authors }}</p>
+            <p>ISBN: {{ book.isbn }}</p>
+            <p>ISBN13: {{ book.isbn13 }}</p>
+            <p>Publication Date: {{book.publication_date}}</p>
+            <p>Page Count: {{ book.num_pages }}</p>
+            <p>Hits: {{ book.num_hits }}</p>
+            <p>Rating: {{ book.ratings_avg }}</p>
+            <p>Ratings: {{ book.ratings_count }}</p>
+            <p>Reviews: {{ book.reviews_count }}</p>
+        </div>
+    </div>
+    
+    <div class="reviews-wrapper">
+        <div class="reviews">
+            {% for review in reviews %}
+            {% if review.review_text != '' %}
+            <div class="review">
+                <p>{{ review.user.username }}</p>
+                <p>Rating: {{ review.rating }}</p>
+                <p>{{ review.pub_date.date }}</p>
+                <p>{{ review.review_text }}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="write-review-wrapper">
+        <a class="write-review" href="{% url 'books:write_review' book.id %}">Write Review</a>
+    </div>
+    
+</div>
+{% endblock %}

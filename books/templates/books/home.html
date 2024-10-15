@@ -1,0 +1,20 @@
+<!-- books/templates/books/home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+    <title>Home</title>
+</head>
+<body>
+    <div class="button-container">
+        <a href="{% url 'books:register' %}">Create Account</a>
+        <a href="{% url 'books:login' %}">Login</a>
+        <p>or</p>
+        <a href="{% url 'books:display_books' %}">Continue as Guest</a>
+    </div>
+</body>
+</html>

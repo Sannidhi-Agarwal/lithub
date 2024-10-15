@@ -1,0 +1,81 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Form container */
+.review-form-container {
+    margin: 0 20px; /* Center the form */
+    padding: 0 20px; /* Padding around the form */
+    background-color: white; /* White background for the form */
+}
+
+/* Label styling */
+.review-label {
+    display: block; /* Make labels take full width */
+    font-size: 16px; /* Increase label size */
+    margin-bottom: 10px; /* Space below the label */
+    font-weight: bold;
+    color: #3D251E; /* Dark brown color for labels */
+}
+
+/* Range input styling */
+.review-range {
+    width: 25%; /* Full width slider */
+    accent-color:#3D251E;
+    margin-bottom: 20px; /* Space below the slider */
+}
+
+.review-range:hover {
+    accent-color: #2B1A14;
+}
+
+/* Textarea styling */
+.review-textarea {
+    width: 100%; /* Full width of the parent container */
+    height: 150px; /* Height of the textarea */
+    padding: 10px; /* Space inside the textarea */
+    font-size: 16px; /* Font size of the text inside the textarea */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    resize: vertical; /* Allow vertical resizing (or you can set to none) */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+    outline: none; /* Remove the blue outline on focus */
+    transition: border-color 0.3s ease; /* Smooth transition when interacting */
+}
+
+/* Change border color on focus */
+.review-textarea:focus {
+    border-color: #3D251E; /* Dark brown border on focus */
+}
+
+/* Button styling */
+.submit-button {
+    margin: 20px 0;
+    background-color: #3D251E; /* Button color */
+    color: white; /* White text */
+    padding: 12px 20px; /* Button padding */
+    border: none; /* No borders */
+    border-radius: 5px; /* Rounded button corners */
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%; /* Make the button full width */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Button hover effect */
+.submit-button:hover {
+    background-color: #2B1A14; /* Darker shade on hover */
+}
+
+/* Overall container styling */
+.review-page-container {
+    margin-top: 40px; /* Space between the form and top of the page */
+    text-align: left; /* Center the text and form elements */
+}

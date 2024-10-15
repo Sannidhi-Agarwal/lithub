@@ -1,0 +1,25 @@
+<!-- books/templates/books/index.html -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <title>Lithub - {% block title %}{% endblock %}</title>
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <img src="{% static 'lithub.png' %}" alt="Logo - LitHub" width="80px" class="logo"/> 
+        <div class="nav-links">
+            <a href="{% url 'books:display_books' %}">Browse</a>
+            <a href="{% url 'books:display_user_books' %}">My Library</a>
+            <a href="{% url 'books:dashboard' %}">Account</a>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

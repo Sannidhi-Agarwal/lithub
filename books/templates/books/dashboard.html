@@ -1,0 +1,20 @@
+<!-- books/templates/books/dashboard.html -->
+{% extends 'index.html'%}
+{% load static %}
+
+{% block title %}My Dashboard{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}"/>
+{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <h2>Hi, {{ user.username }}</h2>
+    <p>Account Created on: {{ user.account_date.date }}</p>
+    <p>Last Login: {{ user.last_login.date }}</p>
+    <p>Friends: {{ user.num_friends }}</p>
+    <p>Books in Library: {{ user.num_books }}</p>
+    <p>Reviews Written: {{ user.num_reviews }}</p>
+    <a href="{% url 'books:logout' %}">Logout</a>
+</div>
+{% endblock %}
